@@ -105,7 +105,7 @@ def imshow(inp, title=None):
 
 def main():
     print(2)
-    # split_data()
+    split_data()
     # face_detection(paths=cfg.paths['dataset'])
     # print(class_names)
     # inputs, classes = next(iter(dataloaders['train']))
@@ -113,9 +113,9 @@ def main():
     # out = utils.make_grid(inputs)
     # imshow(out, title=[class_names[x] for x in classes])
 
-    batch = next(iter(dataloaders['train']))
-    print(batch[0].shape, batch[1].shape)
-    # print(dataloaders['train'])
+    # batch = next(iter(dataloaders['train']))
+    # print(batch[0].shape, batch[1].shape)
+    # # print(dataloaders['train'])
 
 if __name__ == '__main__':
     main()
