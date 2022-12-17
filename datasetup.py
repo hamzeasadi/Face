@@ -105,8 +105,8 @@ def imshow(inp, title=None):
 
 def main():
     print(2)
-    split_data()
-    # face_detection(paths=cfg.paths['dataset'])
+    # split_data()
+    face_detection(paths=cfg.paths['dataset'])
     # print(class_names)
     # inputs, classes = next(iter(dataloaders['train']))
     # # Make a grid from batch
