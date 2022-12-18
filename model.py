@@ -1,8 +1,8 @@
 import torch
 from torch import nn as nn
 from torchvision import models
-from torchinfo import summary
-from facenet_pytorch import MTCNN, InceptionResnetV1
+# from torchinfo import summary
+from facenet_pytorch import InceptionResnetV1
 from torch.nn import functional as F
 
 
@@ -25,7 +25,7 @@ def main():
     x = torch.randn(size=(10, 3, 224, 224))
     model = OrthoFace()
 
-    summary(model=model, input_size=[1, 3, 224, 224], row_settings=['var_names'])
+    # summary(model=model, input_size=[1, 3, 224, 224], row_settings=['var_names'])
     out = model(x)
     
     print(out.shape)
