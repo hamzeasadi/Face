@@ -37,7 +37,7 @@ def train(net, train_loader, val_loader, opt, criterion, epochs, minerror, model
 
 
 def main():
-    model_name = f"orthoface.pt"
+    model_name = f"orthoface1.pt"
     print(dev)
 
     # model = OrthoFace()
