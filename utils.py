@@ -133,14 +133,14 @@ class OrthoLoss(nn.Module):
         if valid_triplet[0].nelement() == 0:
             return torch.tensor([0.0], requires_grad=True)
         else:
-            # loss = self.triplet_loss(a=embbedings[valid_triplet[0][0]], p=embbedings[valid_triplet[1][0]], n=embbedings[valid_triplet[2][0]])
-            loss = self.trip2(a=embbedings[valid_triplet[0][0]], p=embbedings[valid_triplet[1][0]], n=embbedings[valid_triplet[2][0]])
+            loss = self.triplet_loss(a=embbedings[valid_triplet[0][0]], p=embbedings[valid_triplet[1][0]], n=embbedings[valid_triplet[2][0]])
+            # loss = self.trip2(a=embbedings[valid_triplet[0][0]], p=embbedings[valid_triplet[1][0]], n=embbedings[valid_triplet[2][0]])
             for i in range(valid_triplet[0].size()[0]):
                 anchor_idx = valid_triplet[0][i]
                 positive_idx = valid_triplet[1][i]
                 negative_idx = valid_triplet[2][i]
-                # loss += self.triplet_loss(a=embbedings[anchor_idx], p=embbedings[positive_idx], n=embbedings[negative_idx])
-                loss = self.trip2(a=embbedings[valid_triplet[0][0]], p=embbedings[valid_triplet[1][0]], n=embbedings[valid_triplet[2][0]])
+                loss += self.triplet_loss(a=embbedings[anchor_idx], p=embbedings[positive_idx], n=embbedings[negative_idx])
+                # loss = self.trip2(a=embbedings[valid_triplet[0][0]], p=embbedings[valid_triplet[1][0]], n=embbedings[valid_triplet[2][0]])
                 # print(loss)
             return loss
 
