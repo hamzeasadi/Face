@@ -37,7 +37,8 @@ def train(net, train_loader, val_loader, opt, criterion, epochs, minerror, model
 
 
 def main():
-    model_name = f"orthoface1.pt"
+    model_name = f"orthoface2.pt"
+    # model_name = f"orthoface1.pt"
     print(dev)
 
     # model = OrthoFace()
@@ -53,7 +54,7 @@ def main():
     keeptrack = KeepTrack(path=cfg.paths['model'])
     Net = OrthoFace()
     Net.to(dev)
-    opt = optim.Adam(params=Net.parameters(), lr=3e-4)
+    opt = optim.Adam(params=Net.parameters(), lr=0.001)
     criteria = OrthoLoss()
     # dataset = CelebFace(path=cfg.paths)
     # train_data, val_data, test_data = split_and_create_train_val_test(dataset=dataset, train_percent=0.8, batch_size=32)
